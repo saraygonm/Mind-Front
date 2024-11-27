@@ -1,0 +1,57 @@
+.wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wheel {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #ccc;
+    position: relative;
+    overflow: hidden;
+    transition: transform 3s ease;
+}
+
+.wheel.spinning {
+    transition: transform 3s ease;
+}
+
+.segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: lightblue; /* Color de fondo de cada segmento */
+    border: 2px solid #fff; /* Borde blanco para los segmentos */
+    box-sizing: border-box;
+    transform-origin: 100% 100%; /* Punto de rotación para los segmentos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.segment-0 {
+    transform: rotate(0deg);
+}
+
+.segment-1 {
+    transform: rotate(90deg);
+}
+
+.segment-2 {
+    transform: rotate(180deg);
+}
+
+.segment-3 {
+    transform: rotate(270deg);
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: red;
+}
