@@ -1,37 +1,12 @@
-/* fondooo */
-body {
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(65deg,
-        #a8d8ea, /* Azul pastel */
-        #ffd3b6, /* Naranja suave */
-        #bdb2ff, /* Morado pastel */
-        #c2f0c2, /* Verde pastel */
-        #ffeaa7, /* Amarillo suave */
-        #ffb6b9, /* Rosado suave */
-        #f7d6e0, /* Rosado claro */
-        #b0eacd, /* Verde menta */
-        #f5f5dc, /* Beige */
-        #d1c4e9, /* Lila claro */
-        #c8e6c9, /* Verde claro */
-        #ffcccb  /* Rosado suave */
-    );
-    background-size: 400% 400%;
-    animation: gradientAnimation 170s ease infinite;
-}
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
+/* Título de la sección */
 .title {
     font-size: 24px;
-    color: #333;
+    color: #000;
     margin-bottom: 20px;
 }
 
+/* Lista de elementos (juegos) */
 .list {
     list-style-type: none;
     padding: 0;
@@ -39,35 +14,41 @@ body {
     width: 100%;
 }
 
+/* Estilo de los elementos de la lista */
 .list-item {
     display: flex;
-    justify-content: center; /* Centrar los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
     align-items: center;
     gap: 10px;
     padding: 15px;
     margin-bottom: 10px;
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.65);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 
+/* Información de cada juego */
 .game-info {
     text-align: center;
 }
 
+/* Nombre del juego */
 .game-name {
+    font-family: 'Roboto', sans-serif;
     font-size: 18px;
     color: #000;
 }
 
+/* Nombre del creador */
 .creator {
     font-size: 14px;
-    color: #555;
+    color: #333;
     display: block;
     margin-top: 5px;
 }
 
+/* Botón de unirse a un juego */
 .join-button {
     padding: 8px 16px;
     font-size: 14px;
@@ -81,11 +62,40 @@ body {
 }
 
 .join-button:hover {
-    background-color: #ff69b4;
+    background-color: #FF5E00;
 }
 
+/* Mensaje cuando no hay juegos disponibles */
 .no-games {
-    font-size: 16px;
-    color: #000;
-    margin-top: 20px;
+    font-family: 'Press Start 2P', sans-serif;
+    color: #FFFFFF;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Contenedor que se alinea a la derecha */
+.right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 58.5%; /* Ocupa solo el 50% del ancho */
+    max-width: 2000px;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    right:0;
+    transform: translateY(-50%);
+}
+
+.avaliable {
+    font-family: 'Press Start 2P', sans-serif;
+    color: #ffffff;
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: center;
 }

@@ -16,8 +16,8 @@ const GameList = ({ userName, onSelectGame }) => {
     }, []);
 
     return (
-        <div className="container">
-            <h2 className="title">Available Games</h2>
+        <div className="right-container">
+            <h2 className="avaliable">Available Games</h2>
             <ul className="list">
                 {games.length > 0 ? (
                     games.map((game, index) => (
