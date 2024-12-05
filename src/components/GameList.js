@@ -17,22 +17,22 @@ const GameList = ({ userName, onSelectGame }) => {
 
     return (
         <div className="right-container">
-            <h2 className="avaliable">Available Games</h2>
+            <h2 className="avaliable">Juegos Disponibles</h2>
             <ul className="list">
                 {games.length > 0 ? (
                     games.map((game, index) => (
                         <li key={index} className="list-item">
                             <div className="game-info">
                                 <strong className="game-name">{game.name}</strong>
-                                <span className="creator">Created by {game.createdBy}</span>
+                                <span className="creator">Creado por: {game.createdBy}</span>
                             </div>
                             <button className="join-button" onClick={() => onSelectGame(game.name)}>
-                                Join
+                                Ingresar
                             </button>
                         </li>
                     ))
                 ) : (
-                    <p className="no-games">No games available.</p>
+                    <p className="no-games">No hay Juegos Disponibles.</p>
                 )}
             </ul>
         </div>
