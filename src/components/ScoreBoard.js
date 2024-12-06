@@ -9,13 +9,13 @@ const ScoreBoard = ({ scores }) => {
 
     return (
         <div>
-            <h3>Score Board</h3>
+            <h3>Tabla de Puntajes</h3>
             <ul>
                 {Object.entries(scores).length === 0 ? (
-                    <li>No hay puntajes disponibles.</li>
+                    <li className="no-scores">No hay puntajes disponibles</li>
                 ) : (
                     Object.entries(scores).map(([player, score]) => (
-                        <li key={player}>{player}: {score} puntos</li>
+                        <li key={player}>{player} className="score-item": {score} puntos</li>
                     ))
                 )}
             </ul>

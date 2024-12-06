@@ -80,19 +80,9 @@ const Lobby = ({ gameName, userName }) => {
         };
     }, [gameName, userName]); // Dependencias del useEffect
 
-
     const handleStartGame = () => {
         sendMessage('/app/startGame', gameName);
     };
-
-    /*const handleSpinWheel = () => {
-        if (userName === currentPlayer) {
-            setShowQuestion(false); // Asegúrate de que sea false antes de girar
-            sendMessage('/app/spinWheel', gameName);
-        } else {
-            alert(`Esperando a que ${currentPlayer} gire la ruleta.`);
-        }
-    };*/
 
     const handleAnswerSubmit = (answer) => {
         if (showQuestion) {
@@ -105,27 +95,36 @@ const Lobby = ({ gameName, userName }) => {
         }
     };
 
-
-
     return (
-        <div className="lobby-container">
-            <div className="lobby-content">
-                <h2 className="lobby-title">Lobby para {gameName}</h2>
-                <p className="lobby-subtitle">Usuarios en el lobby:</p>
-                <ul className="user-list">
-                    {users.length > 0 ? (
-                        users.map((user, index) => (
-                            <li key={index} className="user-item">{user}</li>
-                        ))
-                    ) : (
-                        <p className="no-users">No hay usuarios aún :(.</p>
-                    )}
-                </ul>
+        <div className="main-container">
+            <div className={`lobby-container ${isGameStarted ? 'lobby-started game-started lobbycontainer tablaLobby' : ''}`}>
+                {/* Este div solo contiene los elementos del lobby */}
+                <div className="contlobby">
+                    <div className="lobby-content">
+                        <h2 className="lobby-title">Lobby para {gameName}</h2>
+                        <p className="lobby-subtitle">Usuarios en el lobby:</p>
+                        <ul className="user-list">
+                            {users.length > 0 ? (
+                                users.map((user, index) => (
+                                    <li key={index} className="user-item">{user}</li>
+                                ))
+                            ) : (
+                                <p className="no-users">No hay usuarios aún :(</p>
+                            )}
+                        </ul>
 
-                {!isGameStarted && users.length >= 2 && (
-                    <button className="start-game-button" onClick={handleStartGame}>Comenzar Juego</button>
-                )}
 
+
+                        {/* Solo se muestra el botón de iniciar el juego si el juego no ha comenzado y hay al menos dos usuarios */}
+                        {!isGameStarted && users.length >= 2 && (
+                            <button className="start-game-button" onClick={handleStartGame}>Comenzar Juego</button>
+                        )}
+
+                    </div>
+
+                </div>
+
+                {/* Solo mostrar la parte del juego cuando haya comenzado */}
                 {isGameStarted && (
                     <div className="game-info">
                         <h3 className="current-player">Jugador Actual: {currentPlayer}</h3>
@@ -138,6 +137,10 @@ const Lobby = ({ gameName, userName }) => {
                         ) : (
                             <p className="waiting-text">Esperando a que {currentPlayer} gire la ruleta...</p>
                         )}
+                        {/* Mostrar el puntaje actual en el contenedor con la clase 'scoreboard-container' */}
+                        <div className="scoreboard-container">
+                            <ScoreBoard scores={scores} />
+                        </div>
 
                         {showTopicSelected && <p className="topic-selected">Tema seleccionado: {selectedTopic}</p>}
 
@@ -154,11 +157,8 @@ const Lobby = ({ gameName, userName }) => {
                         )}
                     </div>
                 )}
-
-                <ScoreBoard scores={scores} /> {/* Mostrar la puntuación actualizada aquí */}
             </div>
         </div>
     );
 };
-
 export default Lobby;
