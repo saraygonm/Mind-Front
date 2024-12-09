@@ -5,8 +5,8 @@
 }
 
 .wheel {
-    width: 250px;
-    height: 250px;
+    width: 230px;
+    height: 230px;
     border-radius: 50%;
     border: 5px solid #ccc;
     position: relative;
@@ -61,4 +61,28 @@
     font-size: 0,8rem !important;
     color: #000 !important;
     margin-top: 20px !important;
+}
+button {
+    padding: 1px 8px; /* Espaciado interno */
+    background-color: #fff; /* Color de fondo del botón */
+    color: #9c27b0; /* Color del texto */
+    border: 2px solid #9c27b0; /* Borde morado */
+    border-radius: 50px; /* Bordes redondeados */
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    font-family: 'Merriweather', sans-serif; /* Tipo de fuente */
+    cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el botón */
+    transition: all 0.3s ease; /* Transición suave para el hover */
+    width: auto; /* Asegura que el tamaño del botón se ajuste al contenido */
+}
+
+button:hover {
+    background-color: #ADD8E6; /* Color de fondo cuando se pasa el ratón por encima */
+    transform: scale(1.05); /* Efecto de aumento en el tamaño */
+}
+
+button:disabled {
+    background-color: #e0e0e0; /* Fondo gris cuando está deshabilitado */
+    border: 6px solid #bdbdbd; /* Borde gris */
+    color: #fff; /* Texto gris cuando está deshabilitado */
+    cursor: not-allowed; /* Cambia el cursor para indicar que no se puede interactuar */
 }
