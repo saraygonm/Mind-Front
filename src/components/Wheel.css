@@ -5,8 +5,8 @@
 }
 
 .wheel {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 5px solid #ccc;
     position: relative;
@@ -54,4 +54,11 @@
     transform: translateX(-50%);
     font-size: 24px;
     color: red;
+}
+
+.topic-selected {
+    font-family: 'Merriweather', serif !important;
+    font-size: 0,8rem !important;
+    color: #000 !important;
+    margin-top: 20px !important;
 }

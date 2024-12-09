@@ -128,7 +128,7 @@ const Lobby = ({ gameName, userName }) => {
                         <p>Esperando a que {currentPlayer} gire la ruleta...</p>
                     )}
 
-                    {showTopicSelected && <p>Tema seleccionado: {selectedTopic}</p>}
+                    {showTopicSelected && <p>Tema selecnado: {selectedTopic}</p>}
 
                     {showQuestion && currentQuestion && (
                         <div>

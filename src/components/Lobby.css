@@ -33,7 +33,7 @@
 /* Title */
 .lobby-title {
     font-family: 'Press Start 2P', sans-serif;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: rgb(255, 200, 0);
     margin-bottom: 6px;
 
@@ -112,13 +112,45 @@
 }
 
 /* Game info */
+
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 21%;
+    height: 220px;
+    max-width: 500px;
+    max-height: 500px;
+    padding: 185px;
+    background-color: rgba(255, 255, 255, 0.55);
+    border: 3px solid #000;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 250px;
+    top: 70px;
+    z-index: 2;
+    font-size: 1.2rem;
+    margin-bottom: 1px;
+    text-align: left;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: normal;
+
+}
+
 .game-info {
-    margin-top: 10px;
+    margin-top: 1px;
 }
 
 .current-player {
+    font-family: 'Merriweather', serif;
+    margin-top: -170px;
     font-size: 1.5rem;
     color: #ff4081;
+    flex-grow: 1;
 }
 
 .waiting-text {
@@ -128,31 +160,55 @@
 
 /* Topic selected */
 .topic-selected {
-    font-size: 1.1rem;
-    color: #333;
-    margin-top: 10px;
+    font-family: 'Merriweather', serif !important;
+    font-size: 16px !important;
+    color: #000 !important;
+    margin-top: 20px !important;
+}
+
+.game-container .topic-selected {
+    font-family: 'Merriweather', serif;
+    font-size: 3rem; /* Tamaño más pequeño para que sea más legible */
+    color: #fff;  /* Color morado en lugar de blanco */
+    margin-top: 20px;
 }
 
 /* Question section */
 .question-container {
-    margin-top: 20px;
+    margin-top: -220px;
+    text-align: left;  /* Asegura que todo el contenido dentro de .question-container esté alineado a la izquierda */
+    gap: 900px;
+    width: 1900%;
+    height: 2px;
+    max-width: 500px;
+    max-height: 500px;
+    padding: 185px;
 }
 
 .category-title {
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1.3rem;
+    color: #2382D2;
     margin-bottom: 10px;
+    text-align: left;  /* Alineación a la izquierda */
 }
 
 .question-text {
     font-size: 1.1rem;
     color: #555;
     margin-bottom: 20px;
+    text-align: left;  /* Alineación a la izquierda */
 }
 
-/* Option buttons */
+/* Contenedor de los botones */
+.option-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* Crea 4 columnas de igual tamaño */
+    gap: 10px;  /* Espacio entre las columnas */
+    width: 100%;
+}
+
+/* Botones */
 .option-button {
-    margin: 8px;
     padding: 10px;
     background-color: #ff4081;
     border: none;
@@ -160,6 +216,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease;
+    text-align: center;
 }
 
 .option-button:hover {
@@ -190,7 +247,7 @@
  /* Estilo para el subtítulo del lobby */
  .lobby-started .lobby-subtitle {
      font-size: 1.2rem;
-     color: #fff;
+     color: #000;
      font-weight: 900;
      margin-bottom: 10px; /* Espaciado entre el subtítulo y los siguientes elementos */
      text-align: left;
@@ -205,15 +262,29 @@
      text-align: left;
  }
 
+.lobby-started h3 {
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 1.5rem; /* Ajusta el tamaño según sea necesario */
+    color: rgb(255, 200, 0); /* Asegúrate de que coincida con el estilo que deseas */
+    text-align: center; /* Ajusta si es necesario */
+}
+
+.lobby-started .no-users {
+     font-family: 'Merriweather', sans-serif;
+     font-size: 1rem;
+     color: #000;
+     text-align: center;
+}
+
 .lobby-started .scoreboard-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
+    gap: 1px;
     width: 18%;
     height: 220px;
-    max-width: 400px;
-    max-height: 500px;
+    max-width: 18%;
+    max-height: 220px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.55);
     border: 3px solid #000;
@@ -221,8 +292,8 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     position: absolute;  /* El contenedor es absolutamente posicionado dentro de su contenedor principal */
     left: 960px; /* Ajuste de la posición horizontal */
-    top: 60px; /* Ajusta la posición vertical dentro del contenedor principal */
-    z-index: 0;  /* Esto asegura que .scoreboard-container quede debajo de .contlobby */
+    top: 100px; /* Ajusta la posición vertical dentro del contenedor principal */
+    z-index: 1;  /* Esto asegura que .scoreboard-container quede debajo de .contlobby */
     font-family: 'Press Start 2P', sans-serif;
     font-size: 1.2rem;
     color: rgb(255, 200, 0);
@@ -236,23 +307,42 @@
     font-size: 18px;
     color: #000;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 2px;
     font-style: italic; /* Cursiva para hacer el texto menos fuerte */
 }
+
+/* Estilo para el texto "No hay puntajes disponibles" */
+.lobby-started .scoreboard-container .no-scores {
+    font-family: 'Merriweather', serif;
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    color: #000; /* Color del texto */
+    margin-bottom: 9px;
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    font-weight: 900;
+
+}
+
 .lobby-started .scoreboard-container .score-item {
+    font-family: 'Merriweather', serif;
     font-size: 18px;
-    color: #333;
+    color: #;
     padding: 10px;
     border-bottom: 1px solid #ddd;
     text-align: center; /* Alineación centrada para los puntajes */
 }
 
 .lobby-started .scoreboard-container .score-item {
-    font-size: 8px;
-    color: #000;
-    padding: 1px;
-    border-bottom: 1px solid #ddd;
-    text-align: center; /* Alineación centrada para los puntajes */
+    font-family: 'Merriweather', serif;
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    color: #000; /* Color del texto */
+    margin-bottom: 9px;
+    text-align: center;
+    font-style: italic;
+    margin-top: 10px;
+    font-weight: 900;
+
 }
 
 .lobby-started .contlobby {
@@ -270,7 +360,7 @@
     padding: 10px;
     position: absolute;  /* También está posicionado absolutamente dentro del contenedor principal */
     left: 960px; /* Ajuste de la posición horizontal */
-    top: 330px; /* Mueve este contenedor a 350px de la parte superior del contenedor principal */
+    top: 390px; /* Mueve este contenedor a 350px de la parte superior del contenedor principal */
     z-index: 1; /* Esto asegura que .contlobby esté por encima de .scoreboard-container */
     overflow: hidden;
     word-wrap: break-word;  /* Rompe las palabras largas si es necesario */

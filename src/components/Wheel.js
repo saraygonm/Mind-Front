@@ -43,7 +43,7 @@ const Wheel = ({ onSpinComplete }) => {
             <button onClick={spinWheel} disabled={isSpinning}>
                 {isSpinning ? 'Girando...' : 'Girar Ruleta'}
             </button>
-            {!isSpinning && selectedTopic && <h3>Tema seleccionado: {selectedTopic}</h3>}
+            {!isSpinning && selectedTopic && <h3 className="topic-selected">Tema seleccionado: {selectedTopic}</h3>}
         </div>
     );
 };

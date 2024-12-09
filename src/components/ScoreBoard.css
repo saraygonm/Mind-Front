@@ -33,12 +33,14 @@
 .lobby-started .scoreboard-container .score-list {
     width: 100%;
     list-style-type: none; /* Quitar los puntos o viñetas */
+    list-style-type: none; /* Quitar los puntos o viñetas */
     padding: 0;
     margin: 0;
 }
 
 .lobby-started .scoreboard-container .score-item {
-    font-size: 8px;
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
     color: #000;
     padding: 1px;
     border-bottom: 1px solid #ddd;

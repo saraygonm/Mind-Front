@@ -113,52 +113,60 @@ const Lobby = ({ gameName, userName }) => {
                             )}
                         </ul>
 
-
-
                         {/* Solo se muestra el botón de iniciar el juego si el juego no ha comenzado y hay al menos dos usuarios */}
                         {!isGameStarted && users.length >= 2 && (
                             <button className="start-game-button" onClick={handleStartGame}>Comenzar Juego</button>
                         )}
-
                     </div>
-
                 </div>
 
                 {/* Solo mostrar la parte del juego cuando haya comenzado */}
                 {isGameStarted && (
                     <div className="game-info">
-                        <h3 className="current-player">Jugador Actual: {currentPlayer}</h3>
-
-                        {currentPlayer === userName ? (
-                            <Wheel onSpinComplete={(topic) => {
-                                setSelectedTopic(topic);
-                                sendMessage('/app/topicSelected', JSON.stringify({ gameName, topic }));
-                            }} />
-                        ) : (
-                            <p className="waiting-text">Esperando a que {currentPlayer} gire la ruleta...</p>
-                        )}
                         {/* Mostrar el puntaje actual en el contenedor con la clase 'scoreboard-container' */}
                         <div className="scoreboard-container">
                             <ScoreBoard scores={scores} />
                         </div>
 
-                        {showTopicSelected && <p className="topic-selected">Tema seleccionado: {selectedTopic}</p>}
+                        <div className="game-container">
+                            <h3 className="current-player">Jugador Actual: {currentPlayer}</h3>
 
-                        {showQuestion && currentQuestion && (
-                            <div className="question-container">
-                                <h4 className="category-title">Categoría: {currentQuestion.category}</h4>
-                                <p className="question-text">{currentQuestion.questionText}</p>
-                                {currentQuestion.options.map((option, idx) => (
-                                    <button key={idx} className="option-button" onClick={() => handleAnswerSubmit(option)}>
-                                        {option}
-                                    </button>
-                                ))}
-                            </div>
-                        )}
+                            {currentPlayer === userName ? (
+                                <Wheel onSpinComplete={(topic) => {
+                                    setSelectedTopic(topic);
+                                    sendMessage('/app/topicSelected', JSON.stringify({ gameName, topic }));
+                                }} />
+                            ) : (
+                                <p className="waiting-text">Esperando a que {currentPlayer} gire la ruleta...</p>
+                            )}
+
+                            {showTopicSelected && <p className="topic-selected">Tema seleccionado: {selectedTopic}</p>}
+
+                            {showQuestion && currentQuestion && (
+                                <div className="question-container">
+                                    <h4 className="category-title">Categoría: {currentQuestion.category}</h4>
+                                    <p className="question-text">{currentQuestion.questionText}</p>
+
+                                    <div className="option-buttons-container">
+                                        {/* Los botones se organizarán automáticamente en 4 columnas */}
+                                        {currentQuestion.options.map((option, idx) => (
+                                            <button key={idx} className="option-button" onClick={() => handleAnswerSubmit(option)}>
+                                                {option}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </div>
                 )}
             </div>
         </div>
+
+
+
     );
+
 };
 export default Lobby;
+
