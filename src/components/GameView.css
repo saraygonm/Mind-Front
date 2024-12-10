@@ -62,7 +62,7 @@ body {
 /* Waiting for player spin */
 .waiting-message {
     font-size: 1.2rem;
-    color: #ff4081;
+    color: #fff;
 }
 
 /* Answer options */

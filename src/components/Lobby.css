@@ -132,9 +132,9 @@
     text-align: left;
     word-wrap: break-word;
     white-space: normal;
-    left: -150px; /* Ajuste de la posición horizontal */
-    top: -90px;
-    position: relative; /* Permite posicionarlo correctamente dentro de su contenedor */
+    left: 300px; /* Ajuste de la posición horizontal */
+    top: 165px;
+    position: absolute; /* Permite posicionarlo correctamente dentro de su contenedor */
 }
 
 .game-info {
@@ -151,7 +151,7 @@
 
 .waiting-text {
     font-size: 1.2rem;
-    color: #000;
+    color: #fff;
     font-weight: bold;
 }
 
@@ -184,11 +184,11 @@
     gap: 9px;
     width: 1900%;
     padding:185px;
-    max-width: 500px;
+    max-width: 800px;
     padding: 20px;
     position: relative;
-    top: 200px;
-    left: -150px;
+    top: 399px;
+    left: -170px;
     z-index: 2;  /* Asegura que el contenedor esté por encima de otros elementos */
 }
 
@@ -211,13 +211,14 @@
 .option-buttons-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);  /* Crea 4 columnas de igual tamaño */
-    gap: 10px;  /* Espacio entre las columnas */
+    gap: 8px;  /* Espacio entre las columnas */
     width: 100%;
 }
 
 /* Botones */
 .option-button {
     padding: 6px;
+    gap: 8px;
     background-color: #ff4081;
     border: none;
     color: white;
@@ -225,7 +226,8 @@
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease;
     text-align: center;
-    font-size: 14px; /* Tamaño de fuente ajustado a 12px */}
+    font-size: 14px; /* Tamaño de fuente ajustado a 12px */
+}
 
 .option-button:hover {
     transform: scale(1.05);
