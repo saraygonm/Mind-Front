@@ -37,20 +37,15 @@ const Wheel = ({ onSpinComplete }) => {
                 {topics.map((topic, index) => (
                     <div key={index} className={`segment segment-${index}`}>
                         <span>{topic}</span>
-                    </div>
+                   </div>
                 ))}
             </div>
-            <button
-                className="spin-button"
-                onClick={spinWheel}
-                disabled={isSpinning}
-            >
+            <button onClick={spinWheel} disabled={isSpinning}>
                 {isSpinning ? 'Girando...' : 'Girar Ruleta'}
             </button>
-            {!isSpinning && selectedTopic && <h3 className="topic-selected">Tema seleccionado: {selectedTopic}</h3>}
+            {!isSpinning && selectedTopic && <h3>Tema seleccionado: {selectedTopic}</h3>}
         </div>
     );
-
 };
 
 export default Wheel;

@@ -73,11 +73,13 @@ button {
     cursor: pointer; /* Cambia el cursor cuando el mouse está sobre el botón */
     transition: all 0.3s ease; /* Transición suave para el hover */
     width: auto; /* Asegura que el tamaño del botón se ajuste al contenido */
+    position: relative;
 }
 
 button:hover {
     background-color: #ADD8E6; /* Color de fondo cuando se pasa el ratón por encima */
     transform: scale(1.05); /* Efecto de aumento en el tamaño */
+    position: relative;
 }
 
 button:disabled {
@@ -85,4 +87,5 @@ button:disabled {
     border: 6px solid #bdbdbd; /* Borde gris */
     color: #fff; /* Texto gris cuando está deshabilitado */
     cursor: not-allowed; /* Cambia el cursor para indicar que no se puede interactuar */
+    position: relative;
 }

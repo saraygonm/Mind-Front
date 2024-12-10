@@ -119,26 +119,22 @@
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    width: 21%;
-    height: 220px;
-    max-width: 500px;
-    max-height: 500px;
-    padding: 185px;
-    background-color: rgba(255, 255, 255, 0.55);
-    border: 3px solid #000;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    position: absolute;
-    left: 250px;
-    top: 70px;
-    z-index: 2;
+    width: 100%; /* Ajusta el ancho para que ocupe un porcentaje razonable */
+    max-width: 500px; /* Asegura que el contenedor no sea mayor a 500px */
+    height: auto; /* Deja que la altura se ajuste automáticamente al contenido */
+    padding: 10px; /* Ajusta el padding para evitar desbordes */
+    /*background-color: rgba(255, 255, 255, 0.55);*/
+    /*border: 3px solid #000;*/
+    border-radius: 0px;
+    /*box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);*/
+    margin: 70px auto 15px; /* Centra el contenedor y agrega un margen superior */
     font-size: 1.2rem;
-    margin-bottom: 1px;
     text-align: left;
-    overflow: hidden;
     word-wrap: break-word;
     white-space: normal;
-
+    left: -150px; /* Ajuste de la posición horizontal */
+    top: -90px;
+    position: relative; /* Permite posicionarlo correctamente dentro de su contenedor */
 }
 
 .game-info {
@@ -175,15 +171,25 @@
 }
 
 /* Question section */
+/* Contenedor padre de .question-container con position: relative */
+.parent-container {
+    position: relative;
+    z-index: 1; /* Asegúrate de que otros elementos estén debajo de este contenedor */
+}
+
+/* .question-container con absolute */
 .question-container {
-    margin-top: -220px;
-    text-align: left;  /* Asegura que todo el contenido dentro de .question-container esté alineado a la izquierda */
-    gap: 900px;
+    margin-top: -350px;
+    text-align: left;
+    gap: 9px;
     width: 1900%;
-    height: 2px;
+    padding:185px;
     max-width: 500px;
-    max-height: 500px;
-    padding: 185px;
+    padding: 20px;
+    position: relative;
+    top: 200px;
+    left: -150px;
+    z-index: 2;  /* Asegura que el contenedor esté por encima de otros elementos */
 }
 
 .category-title {
@@ -195,7 +201,7 @@
 
 .question-text {
     font-size: 1.1rem;
-    color: #000;
+    color: #fff;
     margin-bottom: 20px;
     text-align: left;  /* Alineación a la izquierda */
     font-weight: bold;
@@ -240,7 +246,7 @@
  /* Estilo para el título del lobby */
  .lobby-started .lobby-title {
      font-family: 'Press Start 2P', sans-serif;
-     font-size: 0,8rem;
+     font-size: 0,7rem;
      color: rgb(255, 200, 0);
      margin-bottom: 10px; /* Espaciado entre el título y los siguientes elementos */
      text-align: left;
@@ -266,10 +272,12 @@
 
 .lobby-started h3 {
     font-family: 'Press Start 2P', sans-serif;
-    font-size: 1.5rem; /* Ajusta el tamaño según sea necesario */
+    font-size: 1rem; /* Ajusta el tamaño según sea necesario */
     color: rgb(255, 200, 0); /* Asegúrate de que coincida con el estilo que deseas */
     text-align: center; /* Ajusta si es necesario */
 }
+
+
 
 .lobby-started .no-users {
      font-family: 'Merriweather', sans-serif;
@@ -288,7 +296,7 @@
     max-width: 20%;
     max-height: 280px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.55);
+    background-color: rgba(255, 255, 255, 0.5);
     border: 3px solid #000;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
