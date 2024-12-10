@@ -234,7 +234,7 @@
     background-color: #9c27b0;
 }
 
-//Comenzar Juego
+/*Comenzar Juego*/
 /* Nueva clase para cuando el juego ha comenzado */
 .lobby-started {
     justify-content: flex-start; /* Alinea el contenido hacia la izquierda */
@@ -242,13 +242,13 @@
 }
 
 /* Para los elementos dentro del lobby cuando el juego ha comenzado */
-//* Contenedor cuando el juego ha comenzado */
+/* Contenedor cuando el juego ha comenzado */
 
 
  /* Estilo para el título del lobby */
  .lobby-started .lobby-title {
      font-family: 'Press Start 2P', sans-serif;
-     font-size: 0,7rem;
+     font-size: 0.7rem;
      color: rgb(255, 200, 0);
      margin-bottom: 10px; /* Espaciado entre el título y los siguientes elementos */
      text-align: left;
@@ -338,7 +338,6 @@
 .lobby-started .scoreboard-container .score-item {
     font-family: 'Merriweather', serif;
     font-size: 18px;
-    color: #;
     padding: 10px;
     border-bottom: 1px solid #ddd;
     text-align: center; /* Alineación centrada para los puntajes */
