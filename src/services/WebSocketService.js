@@ -5,7 +5,7 @@ let client;
 
 export function connect(onConnectCallback) {
     client = new Client({
-        webSocketFactory: () => new SockJS('https://mindracers2-dpa2hqfmbugggth5.canadacentral-01.azurewebsites.net'),
+        webSocketFactory: () => new SockJS('https://mindracers2-dpa2hqfmbugggth5.canadacentral-01.azurewebsites.net/ws'),
         onConnect: () => {
             console.log('Connected');
             onConnectCallback();
