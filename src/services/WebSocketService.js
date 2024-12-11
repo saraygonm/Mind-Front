@@ -5,7 +5,7 @@ let client;
 
 export function connect(onConnectCallback) {
     client = new Client({
-        webSocketFactory: () => new SockJS('http://localhost:8080/wss'),
+        webSocketFactory: () => new SockJS('https://localhost:8080/wss'),
         onConnect: () => {
             console.log('Connected');
             onConnectCallback();
